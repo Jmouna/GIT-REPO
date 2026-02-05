@@ -15,6 +15,7 @@ public class Test {
 >>>>>>> dev
 =======
 		System.out.println("merge");
+		System.out.println("dernier essai");
 >>>>>>> dev
 	}
 

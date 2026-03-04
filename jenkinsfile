@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    tools {
+        jdk 'JDK21'
+    }
+
+    stages {
+        stage('Checkout code') {
+            steps {
+                git branch: 'mainBranch', url: 'https://github.com/Jmouna/GIT-REPO.git'
+            }
+        }
+
+        stage('Compile code') {
+            steps {
+                sh 'javac -d bin src/application/Test.java'
+            }
+        }
+
+        stage('Execute code') {
+            steps {
+                sh 'java -cp bin application.Test '
+            }
+        }
+    }
+}
